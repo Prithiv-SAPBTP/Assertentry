@@ -1,0 +1,19 @@
+<mvc:View controllerName="assertentry.controller.HomePage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" press="FirstTilePress">
+		<TileContent class="sapUiTinyMarginTop">
+			<Text text="HRBPs / SPOCs"></Text>
+		</TileContent>
+	</GenericTile>
+
+	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" press="SecondTilePress">
+		<TileContent class="sapUiTinyMarginTop">
+			<Text text="Payroll team"></Text>
+		</TileContent>
+	</GenericTile>
+
+    </Page>
+</mvc:View>

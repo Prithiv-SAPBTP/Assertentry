@@ -1,0 +1,49 @@
+<mvc:View controllerName="assertentry.controller.EmpDetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified">
+	
+    <Page id="page" title="{i18n>title}">
+
+     <l:VerticalLayout>
+		<u:FileUploader
+			id="fileUploader"
+			name="myFileUpload"
+			uploadUrl="upload/"
+			tooltip="Upload your file to the local server"
+			uploadComplete="handleUploadComplete"
+			change="handleValueChange"
+			typeMissmatch="handleTypeMissmatch"
+			style="Emphasized"
+			fileType="txt,jpg,xlsx"
+			placeholder="Choose a file for Upload...">
+				<u:parameters>
+					<u:FileUploaderParameter
+						name="Accept-CH"
+						value="Viewport-Width"/>
+					<u:FileUploaderParameter
+						name="Accept-CH"
+						value="Width"/>
+					<u:FileUploaderParameter
+						name="Accept-CH-Lifetime"
+						value="86400"/>
+				</u:parameters>
+			</u:FileUploader>
+		<Button
+			text="Upload File"
+			press="handleUploadPress"/>
+
+	</l:VerticalLayout>
+
+
+     <!-- <Table id="detailsTable" inset="false">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Excel Data Preview" level="H2"/>
+                    </Toolbar>
+                </headerToolbar>
+            </Table> -->
+
+    </Page>
+</mvc:View>
