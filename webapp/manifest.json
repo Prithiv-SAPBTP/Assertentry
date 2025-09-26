@@ -102,6 +102,20 @@
           "target": [
             "Emp"
           ]
+        },
+        {
+          "name": "PayrollDetails",
+          "pattern": "PayrollDetails",
+          "target": [
+            "Payroll"
+          ]
+        },
+        {
+          "name": "testpage",
+          "pattern": "testpage",
+          "target": [
+            "test"
+          ]
         }
       ],
       "targets": {
@@ -112,6 +126,14 @@
         "Emp": {
           "id": "EmpDetails",
           "name": "EmpDetails"
+        },
+        "Payroll": {
+          "id": "PayrollDetails",
+          "name": "PayrollDetails"
+        },
+        "test": {
+          "id": "testpage",
+          "name": "testpage"
         }
       }
     },

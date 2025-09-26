@@ -1,4 +1,4 @@
-<mvc:View controllerName="assertentry.controller.EmpDetails"
+<mvc:View controllerName="assertentry.controller.PayrollDetails"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
@@ -6,7 +6,7 @@
 	
     <Page id="page" title="{i18n>title}">
 
-     <l:VerticalLayout>
+    <l:VerticalLayout>
 		<u:FileUploader
 			id="fileUploader"
 			name="myFileUpload"

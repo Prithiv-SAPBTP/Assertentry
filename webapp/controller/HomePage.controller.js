@@ -8,6 +8,9 @@ sap.ui.define([
         },
         FirstTilePress(){
             this.getOwnerComponent().getRouter().navTo("EmpDetails")
+        },
+        SecondTilePress(){
+           this.getOwnerComponent().getRouter().navTo("PayrollDetails") 
         }
     });
 });
