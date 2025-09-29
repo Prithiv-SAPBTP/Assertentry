@@ -115,7 +115,8 @@ handleUploadPress: function () {
         }
 
         var url = that.getOwnerComponent().getModel().sServiceUrl;
-        var oDataModel = new sap.ui.model.odata.ODataModel(url, true); // enable batch
+        var oDataModel = new sap.ui.model.odata.ODataModel(url, true); 
+
         oDataModel.setUseBatch(true);
 
         var uPath = "/PERSON_DATASet";
@@ -144,11 +145,35 @@ handleUploadPress: function () {
     });
 },
 
-// Promise-based Excel reader
+// readExcelFile: function (oFile) {
+//     return new Promise(function (resolve, reject) {
+//         var reader = new FileReader();
+//         reader.onload = function (e) {
+//             try {
+//                 var data = new Uint8Array(e.target.result);
+//                 var workbook = XLSX.read(data, { type: "array" });
+//                 var sheetName = workbook.SheetNames[0];
+//                 var sheet = workbook.Sheets[sheetName];
+//                 var jsonData = XLSX.utils.sheet_to_json(sheet);
+
+//                 var oModel = new sap.ui.model.json.JSONModel({ FileDetails: jsonData });
+//                 this.getView().setModel(oModel,"empData");
+
+//                 resolve(jsonData); // return Excel JSON rows
+
+//             } catch (err) {
+//                 reject(err);
+//             }
+//         };
+//         reader.onerror = reject;
+//         reader.readAsArrayBuffer(oFile);
+//     });
+// },
+
 readExcelFile: function (oFile) {
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         var reader = new FileReader();
-        reader.onload = function (e) {
+        reader.onload = (e) => {
             try {
                 var data = new Uint8Array(e.target.result);
                 var workbook = XLSX.read(data, { type: "array" });
@@ -156,7 +181,10 @@ readExcelFile: function (oFile) {
                 var sheet = workbook.Sheets[sheetName];
                 var jsonData = XLSX.utils.sheet_to_json(sheet);
 
-                resolve(jsonData); // return Excel JSON rows
+                var oModel = new sap.ui.model.json.JSONModel({ FileDetails: jsonData });
+                this.getView().setModel(oModel,"empData");  // ✅ works with arrow function
+
+                resolve(jsonData);
             } catch (err) {
                 reject(err);
             }

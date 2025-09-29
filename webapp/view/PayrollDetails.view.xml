@@ -39,13 +39,44 @@
 	</l:VerticalLayout>
 
 
-     <!-- <Table id="detailsTable" inset="false">
-                <headerToolbar>
-                    <Toolbar>
-                        <Title text="Excel Data Preview" level="H2"/>
-                    </Toolbar>
-                </headerToolbar>
-            </Table> -->
+     <Table id="ID" items="{payrollData>/FileDetails}">
+        <columns>
+            <Column>
+            <Text text="Personnel Number"/>
+            </Column>
+             <Column>
+            <Text text="Sequential number"/>
+            </Column>
+             <Column>
+            <Text text="Period Parameters"/>
+            </Column>
+             <Column>
+            <Text text="Payroll Year"/>
+            </Column>
+             <Column>
+            <Text text="Payroll Period"/>
+            </Column>
+             <Column>
+            <Text text="Start Date"/>
+            </Column>
+			<Column>
+            <Text text="End Date"/>
+            </Column>
+        </columns>
+        <items>
+        <ColumnListItem>
+        <cells>
+            <Text text="{payrollData>Pernr}"/>
+            <Text text="{payrollData>Seqnr}"/>
+            <Text text="{payrollData>Permo}"/>
+            <Text text="{payrollData>Pabrj}"/>
+            <Text text="{payrollData>Pabrp}"/>
+			<Text text="{payrollData>Fpbeg}"/>
+			<Text text="{payrollData>Fpend}"/>
+        </cells>
+        </ColumnListItem>
+        </items>              
+        </Table>
 
     </Page>
 </mvc:View>

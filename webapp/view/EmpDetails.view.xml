@@ -1,6 +1,7 @@
 <mvc:View controllerName="assertentry.controller.EmpDetails"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+	xmlns:c="sap.ui.core"
 	xmlns:l="sap.ui.layout"
 	xmlns:u="sap.ui.unified">
 	
@@ -46,6 +47,40 @@
                     </Toolbar>
                 </headerToolbar>
             </Table> -->
-
+ <Table id="ID" items="{empData>/FileDetails}">
+        <columns>
+            <Column>
+            <Text text="Personnel Number"/>
+            </Column>
+             <Column>
+            <Text text="End Date"/>
+            </Column>
+             <Column>
+            <Text text="Start Date"/>
+            </Column>
+             <Column>
+            <Text text="Number of Infotype Record"/>
+            </Column>
+             <Column>
+            <Text text="User Name"/>
+            </Column>
+            <Column>
+            <Text text="Email Address"/>
+            </Column>
+        </columns>
+        <items>
+        <ColumnListItem>
+        <cells>
+            <Text text="{empData>Pernr}"/>
+            <Text text="{empData>Endda}"/>
+            <Text text="{empData>Begda}"/>
+            <Text text="{empData>Seqnr}"/>
+            <Text text="{empData>Username}"/>
+			<Text text="{empData>MailId}"/>
+        </cells>
+        </ColumnListItem>
+        </items>              
+        </Table>
+			
     </Page>
 </mvc:View>

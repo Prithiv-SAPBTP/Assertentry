@@ -28,12 +28,12 @@ sap.ui.define([
                     return;
                 }
 
-                var url = that.getOwnerComponent().getModel().sServiceUrl;
-                var oDataModel = new sap.ui.model.odata.ODataModel(url, true); // enable batch
-                oDataModel.setUseBatch(true);
+                // var url = that.getOwnerComponent().getModel().sServiceUrl;
+                // var oDataModel = new sap.ui.model.odata.ODataModel(url, true); // enable batch
+                // oDataModel.setUseBatch(true);
 
-                var uPath = "/ZPAYROLL_DATASet";
-                var batchChanges = [];
+                // var uPath = "/ZPAYROLL_DATASet";
+                // var batchChanges = [];
 
                 aExcelData.forEach(function (oRow) {
                     delete oRow.visible;
@@ -59,27 +59,50 @@ sap.ui.define([
 },
 
 
-        readExcelFile: function (oFile) {
-            return new Promise(function (resolve, reject) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    try {
-                        var data = new Uint8Array(e.target.result);
-                        var workbook = XLSX.read(data, { type: "array" });
-                        var sheetName = workbook.SheetNames[0];
-                        var sheet = workbook.Sheets[sheetName];
-                        var jsonData = XLSX.utils.sheet_to_json(sheet);
+//         readExcelFile: function (oFile) {
+//             return new Promise(function (resolve, reject) {
+//                 var reader = new FileReader();
+//                 reader.onload = function (e) {
+//                     try {
+//                         var data = new Uint8Array(e.target.result);
+//                         var workbook = XLSX.read(data, { type: "array" });
+//                         var sheetName = workbook.SheetNames[0];
+//                         var sheet = workbook.Sheets[sheetName];
+//                         var jsonData = XLSX.utils.sheet_to_json(sheet);
 
-                        resolve(jsonData); // return Excel JSON rows
-                    } catch (err) {
-                        reject(err);
-                    }
-                };
-                reader.onerror = reject;
-                reader.readAsArrayBuffer(oFile);
-            });
+//                         resolve(jsonData); // return Excel JSON rows
+//                     } catch (err) {
+//                         reject(err);
+//                     }
+//                 };
+//                 reader.onerror = reject;
+//                 reader.readAsArrayBuffer(oFile);
+//             });
+// },
+
+readExcelFile: function (oFile) {
+    return new Promise((resolve, reject) => {
+        var reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                var data = new Uint8Array(e.target.result);
+                var workbook = XLSX.read(data, { type: "array" });
+                var sheetName = workbook.SheetNames[0];
+                var sheet = workbook.Sheets[sheetName];
+                var jsonData = XLSX.utils.sheet_to_json(sheet);
+
+                var oModel = new sap.ui.model.json.JSONModel({ FileDetails: jsonData });
+                this.getView().setModel(oModel,"payrollData");  // ✅ works with arrow function
+
+                resolve(jsonData);
+            } catch (err) {
+                reject(err);
+            }
+        };
+        reader.onerror = reject;
+        reader.readAsArrayBuffer(oFile);
+    });
 },
-
 
     });
 });
