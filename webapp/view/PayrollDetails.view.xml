@@ -4,7 +4,7 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:u="sap.ui.unified">
 	
-    <Page id="page" title="{i18n>title}">
+    <Page id="page" title="Payroll Details">
 
     <l:VerticalLayout>
 		<u:FileUploader

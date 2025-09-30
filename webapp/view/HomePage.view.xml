@@ -15,5 +15,11 @@
 		</TileContent>
 	</GenericTile>
 
+	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" press="ThirdTilePress">
+		<TileContent class="sapUiTinyMarginTop">
+			<Text text="FA Team"></Text>
+		</TileContent>
+	</GenericTile>
+
     </Page>
 </mvc:View>

@@ -111,8 +111,8 @@
           ]
         },
         {
-          "name": "testpage",
-          "pattern": "testpage",
+          "name": "PostPage",
+          "pattern": "PostPage",
           "target": [
             "test"
           ]
@@ -132,8 +132,8 @@
           "name": "PayrollDetails"
         },
         "test": {
-          "id": "testpage",
-          "name": "testpage"
+          "id": "PostPage",
+          "name": "PostPage"
         }
       }
     },

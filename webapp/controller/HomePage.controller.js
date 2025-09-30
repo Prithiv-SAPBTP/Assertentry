@@ -11,6 +11,9 @@ sap.ui.define([
         },
         SecondTilePress(){
            this.getOwnerComponent().getRouter().navTo("PayrollDetails") 
+        },
+        ThirdTilePress(){
+           this.getOwnerComponent().getRouter().navTo("PostPage") 
         }
     });
 });
