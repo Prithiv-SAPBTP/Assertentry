@@ -5,16 +5,49 @@
     xmlns:core="sap.ui.core"
     xmlns="sap.m">
    <l:VerticalLayout class="sapUiContentPadding" width="100%">
-		<Label text="Person ID :" labelFor="" />
-		<Input id=""
-			placeholder="Enter person id"
-			showSuggestion="true"
-			suggestionItems=""
-            width="25%" 
-            selectedKey="person_id">
-			<suggestionItems>
-				<core:ListItem text="{Name}" additionalText="{SupplierName}" />
-			</suggestionItems>
-		</Input>
+		<Label text="Person ID :"/>
+		<Input id="PersonId" placeholder="Enter person id" width="25%" />
+		<Button text="Go" press="onPressGo"/>
 	</l:VerticalLayout>
+
+	 <Table id="asdfg" items="{oModel>/}">
+        <columns>
+            <Column>
+            <Text text="Personnel Number"/>
+            </Column>
+             <Column>
+            <Text text="Sequential number"/>
+            </Column>
+             <Column>
+            <Text text="Period Parameters"/>
+            </Column>
+             <Column>
+            <Text text="Payroll Year"/>
+            </Column>
+             <Column>
+            <Text text="Payroll Period"/>
+            </Column>
+             <Column>
+            <Text text="Start Date"/>
+            </Column>
+			<Column>
+            <Text text="End Date"/>
+            </Column>
+        </columns>
+        <items>
+        <ColumnListItem>
+        <cells>
+            <Text text="{oModel>/Pernr}"/>
+            <Text text="{oModel>/Seqnr}"/>
+            <Text text="{oModel>/Permo}"/>
+            <Text text="{oModel>/Pabrj}"/>
+            <Text text="{oModel>/Pabrp}"/>
+			<Text text="{oModel>/Fpbeg}"/>
+			<Text text="{oModel>/Fpend}"/>
+			<Text text="{oModel>/Endda}"/>
+			<Text text="{oModel>/Begda}"/>
+        </cells>
+        </ColumnListItem>
+        </items>              
+        </Table>
 </mvc:View>
