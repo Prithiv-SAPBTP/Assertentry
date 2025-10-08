@@ -3,18 +3,35 @@
     displayBlock="true"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:l="sap.ui.layout"
-    xmlns:form="sap.ui.layout.form"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+
     xmlns="sap.m">
 
 
-    <l:VerticalLayout class="sapUiContentPadding" width="100%">
+    <!-- <l:VerticalLayout class="sapUiContentPadding" width="100%">
         <Label text="Person ID :" />
         <Input id="PersonId" placeholder="Enter person id" width="25%" />
         <Button text="Go" press="onPressGo" />
-    </l:VerticalLayout>
+    </l:VerticalLayout> -->
+
+<Page id="pageid" title="Employee Details">
+      <HBox width="100%" justifyContent="Start" alignItems="Center" class="sapUiSmallMarginTop" wrap="Wrap">
+       
+          <VBox width="20%" class="sapUiTinyMarginEnd">
+               <Label text="Person ID :" required="true" />
+        <Input id="PersonId" placeholder="Enter person id" width="80%"  />
+          </VBox>
+
+          <VBox width="10%">
+          <Label text="" />
+            <Button text="Go" press="onPressGo" />
+          </VBox>
+ 
+        </HBox>
 
 
-    <form:SimpleForm editable="false" class="sapUiSmallMarginTop">
+    <!-- <f:SimpleForm editable="false" class="sapUiSmallMarginTop">
         <Label text="Personnel Number" />
         <Text text="{oModel>/Pernr}" />
 
@@ -58,6 +75,166 @@
 
         
 
-    </form:SimpleForm>
+    </f:SimpleForm>
+
+			<OverflowToolbar >
+				<ToolbarSpacer/>
+				
+				<Button text="Get Approval" press="onPressGetapprove" />
+			</OverflowToolbar> -->
+
+            <Table id="personnelTable"
+       inset="false"
+       items="{oModel>/}"
+       includeItemInSelection="true"
+       mode="MultiSelect"
+       class="fancyTable"
+       selectionChange="onTableSelectionChange">
+
+    <headerToolbar>
+        <Toolbar>
+            <Title text="Person Data" level="H3"/>
+            <ToolbarSpacer/>
+            <Button text="Get Approval" icon="sap-icon://approvals" press="onPressGetapprove" />
+        </Toolbar>
+    </headerToolbar>
+
+    <columns>
+        <Column><Text text="Personnel Number"/></Column>
+        <Column><Text text="Username"/></Column>
+        <Column><Text text="Sequential Number"/></Column>
+        <Column><Text text="Mail ID"/></Column>
+        <Column><Text text="Start Date"/></Column>
+        <Column><Text text="End Date"/></Column>
+        <Column><Text text="Period Parameters"/></Column>
+        <Column><Text text="Payroll Year"/></Column>
+        <Column><Text text="Payroll Period"/></Column>
+        <Column><Text text="Start Date of For-Period"/></Column>
+        <Column><Text text="End Date of For-Period"/></Column>
+    </columns>
+
+    <items>
+        <ColumnListItem>
+            <cells>
+                <Text text="{oModel>Pernr}"/>
+                <Text text="{oModel>Username}"/>
+                <Text text="{oModel>Seqnr}"/>
+                <Text text="{oModel>MailId}"/>
+                <Text text="{ path: 'oModel>Begda',
+                              type: 'sap.ui.model.type.Date',
+                              formatOptions: { pattern : 'dd/MM/YYYY'}}"/>
+                <Text text="{ path: 'oModel>Endda',
+                              type: 'sap.ui.model.type.Date',
+                              formatOptions: { pattern : 'dd/MM/YYYY'}}"/>
+                <Text text="{oModel>Permo}"/>
+                <Text text="{oModel>Pabrj}"/>
+                <Text text="{oModel>Pabrp}"/>
+                <Text text="{ path: 'oModel>Fpbeg',
+                              type: 'sap.ui.model.type.Date',
+                              formatOptions: { pattern : 'dd/MM/YYYY'}}"/>
+                <Text text="{ path: 'oModel>Fpend',
+                              type: 'sap.ui.model.type.Date',
+                              formatOptions: { pattern : 'dd/MM/YYYY'}}"/>
+            </cells>
+        </ColumnListItem>
+    </items>
+</Table>
+
+
+
+</Page>
+    <!-- <Table
+    id="idEmpDetailsTable"
+    inset="false"
+    items="{
+        path: 'oModel>/'
+    }"
+    class="sapUiSmallMarginTop"
+>
+    <headerToolbar>
+        <Toolbar>
+            <Title text="Employee Details" level="H2" />
+        </Toolbar>
+    </headerToolbar>
+
+    <columns>
+        <Column>
+            <Text text="Personnel Number" />
+        </Column>
+        <Column>
+            <Text text="Username" />
+        </Column>
+        <Column>
+            <Text text="Sequential Number" />
+        </Column>
+        <Column>
+            <Text text="Mail ID" />
+        </Column>
+        <Column>
+            <Text text="Start Date" />
+        </Column>
+        <Column>
+            <Text text="End Date" />
+        </Column>
+        <Column>
+            <Text text="Period Parameters" />
+        </Column>
+        <Column>
+            <Text text="Payroll Year" />
+        </Column>
+        <Column>
+            <Text text="Payroll Period" />
+        </Column>
+        <Column>
+            <Text text="Start Date of For-Period" />
+        </Column>
+        <Column>
+            <Text text="End Date of For-Period" />
+        </Column>
+    </columns>
+
+    <items>
+        <ColumnListItem>
+            <cells>
+                <Text text="{oModel>/Pernr}" />
+                <Text text="{oModel>/Username}" />
+                <Text text="{oModel>/Seqnr}" />
+                <Text text="{oModel>MailId}" />
+                <Text
+                    text="{
+                        path: 'oModel>Begda',
+                        type: 'sap.ui.model.type.Date',
+                        formatOptions: { pattern : 'dd/MM/YYYY'}
+                    }"
+                />
+                <Text
+                    text="{
+                        path: 'oModel>Endda',
+                        type: 'sap.ui.model.type.Date',
+                        formatOptions: { pattern : 'dd/MM/YYYY'}
+                    }"
+                />
+                <Text text="{oModel>Permo}" />
+                <Text text="{oModel>Pabrj}" />
+                <Text text="{oModel>Pabrp}" />
+                <Text
+                    text="{
+                        path: 'oModel>Fpbeg',
+                        type: 'sap.ui.model.type.Date',
+                        formatOptions: { pattern : 'dd/MM/YYYY'}
+                    }"
+                />
+                <Text
+                    text="{
+                        path: 'oModel>Fpend',
+                        type: 'sap.ui.model.type.Date',
+                        formatOptions: { pattern : 'dd/MM/YYYY'}
+                    }"
+                />
+            </cells>
+        </ColumnListItem>
+    </items>
+</Table> -->
+
 
 </mvc:View>
