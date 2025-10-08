@@ -6,9 +6,11 @@
                 <Key>
                     <PropertyRef Name="Pernr"/>
                 </Key>
-                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Operation" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Component of the Version Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ClientName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Client Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Endda" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProjectContribution" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Project Contibution" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Begda" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Seqnr" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="IT record no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="User Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
