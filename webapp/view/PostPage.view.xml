@@ -8,13 +8,6 @@
 
     xmlns="sap.m">
 
-
-    <!-- <l:VerticalLayout class="sapUiContentPadding" width="100%">
-        <Label text="Person ID :" />
-        <Input id="PersonId" placeholder="Enter person id" width="25%" />
-        <Button text="Go" press="onPressGo" />
-    </l:VerticalLayout> -->
-
 <Page id="pageid" title="Employee Details">
       <HBox width="100%" justifyContent="Start" alignItems="Center" class="sapUiSmallMarginTop" wrap="Wrap">
        
@@ -29,59 +22,6 @@
           </VBox>
  
         </HBox>
-
-
-    <!-- <f:SimpleForm editable="false" class="sapUiSmallMarginTop">
-        <Label text="Personnel Number" />
-        <Text text="{oModel>/Pernr}" />
-
-        <Label text="Username" />
-        <Text text="{oModel>/Username}" />
-
-        <Label text="Sequential Number" />
-        <Text text="{oModel>/Seqnr}" />
-
-        <Label text="Mail ID" />
-        <Text text="{oModel>/MailId}" />
-
-        <Label text="Start Date" />
-        <Text text="{path: 'oModel>/Begda',
-                        type: 'sap.ui.model.type.Date',
-                        formatOptions: { pattern : 'dd/MM/YYYY'}}" />
-
-        <Label text="End Date" />
-        <Text text="{path: 'oModel>/Endda',
-                        type: 'sap.ui.model.type.Date',
-                        formatOptions: { pattern : 'dd/MM/YYYY'}}" />
-
-        <Label text="Period Parameters" />
-        <Text text="{oModel>/Permo}" />
-
-        <Label text="Payroll Year" />
-        <Text text="{oModel>/Pabrj}" />
-
-        <Label text="Payroll Period" />
-        <Text text="{oModel>/Pabrp}" />
-
-		<Label text="Start Date of For-Period" />
-        <Text text="{   path: 'oModel>/Fpbeg',
-                        type: 'sap.ui.model.type.Date',
-                        formatOptions: { pattern : 'dd/MM/YYYY'}}" />
-
-		<Label text="End Date of For-Period" />
-        <Text text="{ path: 'oModel>/Fpend',
-                        type: 'sap.ui.model.type.Date',
-                        formatOptions: { pattern : 'dd/MM/YYYY'}}" />
-
-        
-
-    </f:SimpleForm>
-
-			<OverflowToolbar >
-				<ToolbarSpacer/>
-				
-				<Button text="Get Approval" press="onPressGetapprove" />
-			</OverflowToolbar> -->
 
             <Table id="personnelTable"
        inset="false"
