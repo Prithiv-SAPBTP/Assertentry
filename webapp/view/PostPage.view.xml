@@ -42,13 +42,16 @@
     <columns>
         <Column><Text text="Personnel Number"/></Column>
         <Column><Text text="Username"/></Column>
-        <Column><Text text="Sequential Number"/></Column>
+        <Column><Text text="ClientName"/></Column>
         <Column><Text text="Mail ID"/></Column>
+        <Column><Text text="ProjectContribution"/></Column>
+        <Column><Text text="Amount"/></Column>
         <Column><Text text="Start Date"/></Column>
         <Column><Text text="End Date"/></Column>
         <Column><Text text="Period Parameters"/></Column>
         <Column><Text text="Payroll Year"/></Column>
         <Column><Text text="Payroll Period"/></Column>
+        <Column><Text text="Sequential Number"/></Column>
         <Column><Text text="Start Date of For-Period"/></Column>
         <Column><Text text="End Date of For-Period"/></Column>
     </columns>
@@ -58,8 +61,10 @@
             <cells>
                 <Text text="{oModel>Pernr}"/>
                 <Text text="{oModel>Username}"/>
-                <Text text="{oModel>Seqnr}"/>
+                <Text text="{oModel>ClientName}"/>
                 <Text text="{oModel>MailId}"/>
+                <Text text="{oModel>ProjectContribution}"/>
+                <Text text="{path: 'oModel>Amount', formatter: '.removeLeadingZeros'}"/>
                 <Text text="{ path: 'oModel>Begda',
                               type: 'sap.ui.model.type.Date',
                               formatOptions: { pattern : 'dd/MM/YYYY'}}"/>
@@ -69,6 +74,7 @@
                 <Text text="{oModel>Permo}"/>
                 <Text text="{oModel>Pabrj}"/>
                 <Text text="{oModel>Pabrp}"/>
+                <Text text="{oModel>Seqnr}"/>
                 <Text text="{ path: 'oModel>Fpbeg',
                               type: 'sap.ui.model.type.Date',
                               formatOptions: { pattern : 'dd/MM/YYYY'}}"/>

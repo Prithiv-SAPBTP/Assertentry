@@ -44,6 +44,10 @@ const oEmptyModel = new JSONModel([]);
                 }.bind(this)
             });
         },
+removeLeadingZeros: function (value) {
+    if (!value) return value;
+    return value.replace(/^0+/, ''); 
+},
 
 onPressGetapprove: async function () {
     // const oTable = this.getView().byId("personnelTable");

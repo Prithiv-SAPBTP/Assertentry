@@ -52,6 +52,18 @@
             <Column>
             <Text text="Personnel Number"/>
             </Column>
+            <Column>
+            <Text text="User Name"/>
+            </Column>
+            <Column>
+            <Text text="Email Address"/>
+            </Column>
+            <Column>
+            <Text text="Client Name"/>
+            </Column>
+            <Column>
+            <Text text="Project Contribution"/>
+            </Column>
              <Column>
             <Text text="End Date"/>
             </Column>
@@ -61,22 +73,20 @@
              <Column>
             <Text text="Number of Infotype Record"/>
             </Column>
-             <Column>
-            <Text text="User Name"/>
-            </Column>
-            <Column>
-            <Text text="Email Address"/>
-            </Column>
+             
         </columns>
         <items>
         <ColumnListItem>
         <cells>
             <Text text="{empData>Pernr}"/>
+            <Text text="{empData>Username}"/>
+			<Text text="{empData>MailId}"/>
+            <Text text="{empData>ClientName}"/>
+			<Text text="{empData>ProjectContribution}"/>
             <Text text="{empData>Endda}"/>
             <Text text="{empData>Begda}"/>
             <Text text="{empData>Seqnr}"/>
-            <Text text="{empData>Username}"/>
-			<Text text="{empData>MailId}"/>
+            
         </cells>
         </ColumnListItem>
         </items>              
